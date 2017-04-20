@@ -1,0 +1,36 @@
+{
+  "generator-alfresco": {
+    "originalGeneratorVersion": "0.9.1",
+    "generatorVersion": "0.9.1",
+    "sdkVersion": "2.1.1",
+    "archetypeVersion": "2.1.1",
+    "projectStructure": "basic",
+    "projectGroupId": "dk.magenta.zaragoza",
+    "projectArtifactId": "sandbox",
+    "projectVersion": "1.0.0-SNAPSHOT",
+    "projectPackage": "dk.magenta.zaragoza",
+    "communityOrEnterprise": "Community",
+    "removeDefaultSourceAmps": false,
+    "removeDefaultSourceSamples": false,
+    "moduleRegistry": [
+      {
+        "groupId": "${project.groupId}",
+        "artifactId": "repo-amp",
+        "version": "${project.version}",
+        "packaging": "amp",
+        "war": "repo",
+        "location": "source",
+        "path": "repo-amp"
+      },
+      {
+        "groupId": "${project.groupId}",
+        "artifactId": "share-amp",
+        "version": "${project.version}",
+        "packaging": "amp",
+        "war": "share",
+        "location": "source",
+        "path": "share-amp"
+      }
+    ]
+  }
+}
