@@ -8,5 +8,5 @@ the action. The share side of things had to be made manually.
 
 The repo side of the action was created by the command
 `$ yo alfresco:action` and this generated the action files found in the repo-amp folder. On the share side it was only necessary 
-to create the file `share-repo/src/main/resources/META_INF/share-config-custom.xml`. and edit this. See more comment in this file 
+to create the file `share-amp/src/main/resources/META_INF/share-config-custom.xml`. and edit this. See more comment in this file 
 about which changes were necessary.
