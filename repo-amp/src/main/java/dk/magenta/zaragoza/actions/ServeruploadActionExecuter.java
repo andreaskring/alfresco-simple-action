@@ -46,8 +46,8 @@ public class ServeruploadActionExecuter extends ActionExecuterAbstractBase {
   private static Log logger = LogFactory.getLog(ServeruploadActionExecuter.class);
 
   public static final String ACTION_NAME = "repo-amp.serverupload";
-  public static final String PARAM_ONE = "one";
-  public static final String PARAM_TWO = "two";
+  // public static final String PARAM_ONE = "one";
+  // public static final String PARAM_TWO = "two";
 
   private ServiceRegistry serviceRegistry;
   public void setServiceRegistry(ServiceRegistry serviceRegistry) {
@@ -56,13 +56,14 @@ public class ServeruploadActionExecuter extends ActionExecuterAbstractBase {
 
   @Override
   protected void addParameterDefinitions(List<ParameterDefinition> paramList) {
-    for (String s : new String[]{PARAM_ONE, PARAM_TWO}) {
-      paramList.add(new ParameterDefinitionImpl(s, DataTypeDefinition.TEXT, true, getParamDisplayLabel(s)));
-    }
+//    for (String s : new String[]{PARAM_ONE, PARAM_TWO}) {
+//      paramList.add(new ParameterDefinitionImpl(s, DataTypeDefinition.TEXT, true, getParamDisplayLabel(s)));
+//    }
   }
 
   @Override
   protected void executeImpl(Action action, NodeRef actionedUponNodeRef) {
+    System.out.println("### Hurra ###");
     if (serviceRegistry.getNodeService().exists(actionedUponNodeRef) == true) {
       logger.info("ServeruploadActionExecuter is processing: " + actionedUponNodeRef.toString());
     }

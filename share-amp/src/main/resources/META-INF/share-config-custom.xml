@@ -1,0 +1,52 @@
+<!-- Share configuration related to this particular Share module extension, such as:
+     - Doclib action config
+     - Form config
+     - Aspect and Type config
+
+    Note. Any configuration related to the whole Share.war webapp
+           (i.e. not specific to this share extension) should be
+            placed in the environment specific config:
+             alfresco-allinone/share/src/main/resources/alfresco/web-extension/share-config-custom.xml file
+     -->
+<alfresco-config>
+
+    <config evaluator="string-compare" condition="CSRFPolicy" replace="true">
+        <filter/>
+    </config>
+
+   <config evaluator="string-compare" condition="DocLibActions">
+      <actions>
+
+	<!--
+		NOTES:
+		The id="zerver-action" name in the <action> below can be chosen freely.
+		It is used for reference elsewhere (for example in the <actionGroup> 
+		further down).
+
+		The <param name="action">repo-amp.serverupload</param> references the 
+		bean id of the action on the repo side, i.e. the file
+
+		repo-amp/src/main/amp/config/alfresco/module/repo-amp/context/generated/action-serverupload-context.xml
+
+		has the bean 
+
+		<bean id="repo-amp.serverupload" class="dk.magenta.zaragoza.actions.ServeruploadActionExecuter" parent="action-executer">
+
+	-->
+
+         <action id="zerver-action" type="javascript" label="action.label" icon="download">
+            <param name="function">onActionSimpleRepoAction</param>
+            <param name="action">repo-amp.serverupload</param>
+            <param name="successMessage">message.success</param>
+            <param name="failureMessage">message.failure</param>
+        </action>
+      </actions>
+
+       <actionGroups>
+           <actionGroup id="document-browse">
+               <action index="600" id="zerver-action" />
+           </actionGroup>
+       </actionGroups>
+     </config>
+
+</alfresco-config>
